@@ -35,3 +35,17 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+	enabled = true  // bootJar와 함께 사용할 수 있도록 일반 jar도 활성화
+
+	manifest {
+		attributes(
+			'Main-Class': 'com.example.demo.Step07CicdApplication'  // ★ 여기 클래스명 실제로 사용하는 main 클래스로 바꾸세요!
+		)
+	}
+}
+
+bootJar {
+	enabled = false  // 실행 가능한 jar은 `jar`로만 만들도록 설정
+}
