@@ -32,6 +32,15 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+// ✅ 실행 가능한 bootJar만 생성하도록 설정
+bootJar {
+	enabled = true
+}
+
+jar {
+	enabled = false
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
